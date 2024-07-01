@@ -10,3 +10,27 @@ export default function App() {
     </MantineProvider>
   );
 }
+
+// import React, { useState } from 'react';
+// import SearchForm from './components/SearchForm/SearchForm';
+// import SummonerStats from './components/SummonerStats/SummonerStats';
+// import { fetchSummonerStats } from './api/riotApi';
+
+// const App: React.FC = () => {
+  // const [stats, setStats] = useState<any>(null); // Define a proper type based on the API response
+
+  // const handleSearch = async (summonerName: string) => {
+  //   const data = await fetchSummonerStats(summonerName);
+  //   setStats(data);
+  // };
+
+//   return (
+//     <div className="App">
+//       <h1>Teamfight Tactics Stats</h1>
+//       <SearchForm onSearch={handleSearch} />
+//       <SummonerStats stats={stats} />
+//     </div>
+//   );
+// };
+
+// export default App;
