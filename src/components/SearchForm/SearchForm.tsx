@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Text } from '@mantine/core';
-import { fetchSummonerStats } from '@/api/riotApi';
+import { Center, Text } from '@mantine/core';
+import { fetchSummonerInfo } from '@/api/riotApi';
 
 // interface SearchFormProps {
 //   onSearch: (summonerName: string) => void;
@@ -14,24 +14,23 @@ export interface summoner {
     name: string;
 }
 
-export default function SearchForm({ summoner }: SearchFormProps){ //{ React.FC<SearchFormProps> = ({ onSearch }) => {
+export default function SearchForm(){ //{ React.FC<SearchFormProps> = ({ onSearch }) => {
  const [summonerName, setSummonerName] = useState('');
 
- const handleSearch = async (summonerName: string) => {
-   const data = await fetchSummonerStats(summonerName);
-   <Text> {data} </Text>
-   //setStats(data);
- }
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     handleSearch(summonerName);
   };
   const [stats, setStats] = useState<any>(null); // Define a proper type based on the API response
 
+  const handleSearch = async (summonerName: string) => {
+    const data = await fetchSummonerInfo(summonerName);
+    setStats(data);
+  };
 
   return (
     <>
-    <Text>SearchForm + {summoner.name }</Text>
+    <Center mt={40}>
     <form onSubmit={handleSubmit}>
       <input 
         type="text" 
@@ -41,8 +40,10 @@ export default function SearchForm({ summoner }: SearchFormProps){ //{ React.FC<
       />
       <button type="submit">Search</button>
     </form>
+    </Center>
     </>
   );
 };
+
 
 // export default SearchForm;
