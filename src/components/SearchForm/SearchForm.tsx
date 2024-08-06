@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Center, Text } from '@mantine/core';
 import { fetchSummonerInfo } from '@/api/riotApi';
+import { useNavigate } from 'react-router-dom';
+
 
 // interface SearchFormProps {
 //   onSearch: (summonerName: string) => void;
@@ -15,10 +17,13 @@ export interface summoner {
 }
 
 export default function SearchForm(){ //{ React.FC<SearchFormProps> = ({ onSearch }) => {
- const [summonerName, setSummonerName] = useState('');
+  const [summonerName, setSummonerName] = useState('');
+  const navigate = useNavigate();
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    navigate(`/results/${summonerName}`);
     handleSearch(summonerName);
   };
   const [stats, setStats] = useState<any>(null); // Define a proper type based on the API response

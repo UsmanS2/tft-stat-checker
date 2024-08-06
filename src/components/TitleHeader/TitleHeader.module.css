@@ -1,0 +1,14 @@
+.title {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-size: rem(65px);
+    font-weight: 600;
+    letter-spacing: rem(-2px);
+  
+    @media (max-width: $mantine-breakpoint-md) {
+      font-size: rem(30px);
+    }
+  }
+  
+.text{
+    border-bottom: 2px solid #495057;
+}
