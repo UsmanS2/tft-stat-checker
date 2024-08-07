@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 const port = 4000;
 
-const API_KEY = 'RGAPI-644ef7b0-f3c4-44c4-b422-dca95da75035';
+const API_KEY = 'RGAPI-a4903b2f-0853-4268-b9df-4c66ed8168f0';
 const BASE_URL = 'https://americas.api.riotgames.com'; 
 
 //https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/4CheeseHotPocket/NA1?api_key=RGAPI-51f65f1f-babe-4256-bc23-2f92830ff062
